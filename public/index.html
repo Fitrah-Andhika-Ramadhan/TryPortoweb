@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio CMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="logo">Portfolio CMS</div>
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" onclick="showPortfolio()">Portfolio</button>
+                <button class="btn btn-primary" onclick="showCMS()">CMS Admin</button>
+                <button class="btn btn-danger hidden" id="logoutBtn" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div id="heroSection" class="hero">
+            <h1>Portfolio Kreatif Saya</h1>
+            <p>Jelajahi koleksi project terbaik yang telah saya kerjakan dengan passion dan dedikasi tinggi</p>
+        </div>
+
+        <!-- Public Portfolio View -->
+        <div id="portfolioSection" class="section">
+            <h2 class="section-title">Project Portfolio</h2>
+            <div id="portfolioGrid" class="projects-grid">
+                <!-- Projects will be displayed here -->
+            </div>
+        </div>
+
+        <!-- CMS Admin Section -->
+        <div id="cmsSection" class="section hidden">
+            <h2 class="section-title">CMS Dashboard</h2>
+            
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalProjects">0</div>
+                    <div class="stat-label">Total Project</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalCategories">0</div>
+                    <div class="stat-label">Kategori</div>
+                </div>
+            </div>
+
+            <!-- Add/Edit Project Form -->
+            <h3>Tambah / Edit Project</h3>
+            <form id="projectForm" enctype="multipart/form-data">
+                <input type="hidden" id="projectId">
+                <div class="form-group">
+                    <label for="projectTitle">Judul Project *</label>
+                    <input type="text" id="projectTitle" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectCategory">Kategori *</label>
+                    <select id="projectCategory" required>
+                        <option value="">Pilih Kategori</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Mobile App">Mobile App</option>
+                        <option value="UI/UX Design">UI/UX Design</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Photography">Photography</option>
+                        <option value="Video Production">Video Production</option>
+                        <option value="Other">Lainnya</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectDescription">Deskripsi Project *</label>
+                    <textarea id="projectDescription" placeholder="Ceritakan tentang project ini..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectTech">Teknologi/Tools (pisahkan dengan koma)</label>
+                    <input type="text" id="projectTech" placeholder="React, Node.js, MongoDB">
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectUrl">URL Project (opsional)</label>
+                    <input type="url" id="projectUrl" placeholder="https://example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectImage">Upload Gambar Project</label>
+                    <input type="file" id="projectImage" accept="image/*" onchange="previewImage()">
+                    <img id="imagePreview" class="image-preview">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <span id="submitText">Tambah Project</span>
+                </button>
+                <button type="button" class="btn btn-secondary" onclick="resetForm()" id="cancelBtn" style="display:none;">Cancel</button>
+            </form>
+
+            <!-- Projects Management -->
+            <h3 style="margin-top: 40px;">Kelola Project</h3>
+            <div id="adminProjectsGrid" class="projects-grid">
+                <!-- Admin projects will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+        <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Admin Login</h3>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p id="loginError" style="color: red; margin-top: 10px;"></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

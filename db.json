@@ -1,0 +1,33 @@
+{
+  "projects": [
+    {
+      "id": 1672531200000,
+      "title": "E-commerce Modern",
+      "category": "Web Development",
+      "description": "Platform e-commerce modern dengan fitur lengkap seperti cart, checkout, payment gateway, dan dashboard admin. Dibangun dengan teknologi terdepan untuk memberikan performa terbaik.",
+      "tech": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Stripe API"
+      ],
+      "url": "https://example-ecommerce.com",
+      "image": null,
+      "createdAt": "2023-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 1675209600000,
+      "title": "Mobile Banking App",
+      "category": "Mobile App",
+      "description": "Aplikasi mobile banking dengan UI/UX yang intuitif dan keamanan tingkat tinggi. Fitur transfer, pembayaran, dan monitoring keuangan real-time.",
+      "tech": [
+        "React Native",
+        "Firebase",
+        "Node.js"
+      ],
+      "url": "",
+      "image": null,
+      "createdAt": "2023-02-01T00:00:00.000Z"
+    }
+  ]
+}
